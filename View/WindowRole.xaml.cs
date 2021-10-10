@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApplDemo2018.ViewModel;
 
 namespace WpfApplDemo2018.View
 {
@@ -22,6 +23,8 @@ namespace WpfApplDemo2018.View
         public WindowRole()
         {
             InitializeComponent();
+            RoleViewModel vmRole = new RoleViewModel();
+            lvRole.ItemsSource = vmRole.ListRole;
         }
     }
 }
