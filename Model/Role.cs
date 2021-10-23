@@ -8,6 +8,10 @@ namespace WpfApplDemo2018.Model
 {
     public class Role
     {
+        public Role ShallowCopy()
+        {
+            return (Role)this.MemberwiseClone();
+        }
         public int Id { get; set; }
         public string NameRole { get; set; }
         public Role() { }

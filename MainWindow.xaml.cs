@@ -25,6 +25,7 @@ namespace WpfApplDemo2018
         {
             InitializeComponent();
         }
+        public static int IdRole { get; set; }
         private void Employee_OnClick(object sender, RoutedEventArgs e)
         {
             WindowEmployee wEmployee = new WindowEmployee();
