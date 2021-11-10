@@ -10,6 +10,18 @@ namespace WpfApplDemo2018.ViewModel
 {
     public class PersonViewModel
     {
+        public int MaxId()
+        {
+            int max = 0;
+            foreach (var r in this.ListPerson)
+            {
+                if (max < r.Id)
+                {
+                    max = r.Id;
+                };
+            }
+            return max;
+        }
         public ObservableCollection<Person> ListPerson { get; set; } =
         new ObservableCollection<Person>();
         public PersonViewModel()
