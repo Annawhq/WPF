@@ -30,6 +30,7 @@ namespace WpfApplDemo2018.View
         public WindowEmployee()
         {
             InitializeComponent();
+            DataContext = new PersonViewModel();
             vmPerson = new PersonViewModel();
             vmRole = new RoleViewModel();
             roles = vmRole.ListRole.ToList();
@@ -62,7 +63,7 @@ namespace WpfApplDemo2018.View
             if (wnEmployee.ShowDialog() == true)
             {
                 Role r = (Role)wnEmployee.CbRole.SelectedValue;
-                per.Role = r.NameRole;
+                per.RoleName = r.NameRole;
                 personsDPO.Add(per);
                 // добавление нового сотрудника в коллекцию ListPerson<Person>
                 Person p = new Person();
@@ -83,12 +84,12 @@ namespace WpfApplDemo2018.View
                 tempPerDPO = perDPO.ShallowCopy();
                 wnEmployee.DataContext = tempPerDPO;
                 wnEmployee.CbRole.ItemsSource = roles;
-                wnEmployee.CbRole.Text = tempPerDPO.Role;
+                wnEmployee.CbRole.Text = tempPerDPO.RoleName;
                 if (wnEmployee.ShowDialog() == true)
                 {
                     // перенос данных из временного класса в класс отображения данных
                     Role r = (Role)wnEmployee.CbRole.SelectedValue;
-                    perDPO.Role = r.NameRole;
+                    perDPO.RoleName = r.NameRole;
                     perDPO.FirstName = tempPerDPO.FirstName;
                     perDPO.LastName = tempPerDPO.LastName;
                     perDPO.Birthday = tempPerDPO.Birthday;

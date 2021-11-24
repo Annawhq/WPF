@@ -26,6 +26,7 @@ namespace WpfApplDemo2018.View
         public WindowRole()
         {
             InitializeComponent();
+            DataContext = new RoleViewModel();
             lvRole.ItemsSource = vmRole.ListRole;
         }
         RoleViewModel vmRole = new RoleViewModel();
