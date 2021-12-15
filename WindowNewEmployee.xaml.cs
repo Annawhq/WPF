@@ -27,5 +27,16 @@ namespace WpfApplDemo2018
         {
             DialogResult = true;
         }
+        private void tbBirthday_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (tbBirthday.Visibility == Visibility.Hidden)
+            {
+                ClBirthday.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                ClBirthday.Visibility = Visibility.Hidden;
+            }
+        }
     }
 }
